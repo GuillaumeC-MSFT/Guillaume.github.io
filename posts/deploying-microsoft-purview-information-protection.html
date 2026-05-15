@@ -84,6 +84,37 @@
 
         <p>Also think beyond the initial rollout. Label changes, relabeling, scope changes, and label retirement can all have operational impact. Protection should also align with collaboration and lifecycle needs: encourage governed SharePoint and OneDrive sharing where appropriate, plan for endpoint movement, and recognize that some content needs retention while other content should eventually be deleted.</p>
 
+        <h2>Common scenarios and path forward</h2>
+
+        <p>The table below is not a replacement for the deployment guides. It is a way to connect common business concerns to the next practical Purview decision.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Path forward</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sensitive files are being shared too broadly.</td>
+              <td>Start with visibility into where the content is exposed, confirm whether a sensitivity label can provide the right business signal, then use sharing controls, DLP, and user education to create guardrails without blocking legitimate collaboration.</td>
+            </tr>
+            <tr>
+              <td>DLP creates too many false positives.</td>
+              <td>Review whether the policy is relying on a weak detection signal. Tune confidence levels and supporting evidence first, then consider custom sensitive information types, Exact Data Match, document fingerprinting, or trainable classifiers when built-in signals do not reflect your data well enough.</td>
+            </tr>
+            <tr>
+              <td>Users do not understand which label to apply.</td>
+              <td>Simplify the taxonomy, improve label names and descriptions, publish clearer guidance, and use recommendations or policy tips before adding stricter enforcement. A label model that users understand will usually outperform a more complex model that looks better on paper.</td>
+            </tr>
+            <tr>
+              <td>Protected data moves from cloud services to endpoints.</td>
+              <td>Use labels and DLP together so protection follows the data. Validate the business impact before enforcing endpoint restrictions, and use audit data, overrides, and exception handling to tune the policy before broad rollout.</td>
+            </tr>
+          </tbody>
+        </table>
+
         <h2>Further reading and Microsoft Learn resources</h2>
 
         <table>
