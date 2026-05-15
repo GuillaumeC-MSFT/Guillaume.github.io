@@ -49,8 +49,16 @@
         <p>The first milestone is not policy creation. It is readiness. Complete the documented prerequisites from the Secure by Default blueprint and the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a>, then use the sensitivity labels Excel workbook to plan the label configuration before beginning to publish labels and policies.</p>
 
         <div class="callout">
-          <strong>Recommended sequence:</strong> Establish the secure foundation, confirm readiness, plan the label model, then move into the Purview data security lifecycle.
+          <strong>Recommended sequence:</strong> Establish the secure foundation, define the operating model, confirm readiness, plan the label model, then move into the Purview data security lifecycle.
         </div>
+
+        <h2>Design the operating model before configuration</h2>
+
+        <p>Purview configuration is only one part of the deployment. Business teams should define what the information means, why it matters, and what outcomes they need. IT, security, and compliance teams should translate those requirements into labels, policies, monitoring, exceptions, and support paths.</p>
+
+        <p>User experience is a security dependency. Clear label names, meaningful descriptions, policy tips, and a simple feedback path can reduce confusion and improve compliance. A feedback loop is especially important for automatic labeling and DLP because users and support teams will see the edge cases first. Those signals should feed a tuning backlog instead of being treated as one-off support tickets.</p>
+
+        <p>Also think beyond the initial rollout. Label changes, relabeling, scope changes, and label retirement can all have operational impact. Protection should also align with collaboration and lifecycle needs: encourage governed SharePoint and OneDrive sharing where appropriate, plan for endpoint movement, and recognize that some content needs retention while other content should eventually be deleted.</p>
 
         <h2>Use Microsoft guidance for configuration, then focus on the deployment principles</h2>
 
@@ -75,14 +83,6 @@
         <p>DLP is most effective after you understand the data and have a reliable classification foundation. It should complement labels, not replace them. Where it makes sense, use labels as DLP conditions so policies respond to business context rather than only pattern matching.</p>
 
         <p>Introduce enforcement based on confidence. Begin with visibility and user education, then move toward stronger controls for scenarios where the signal is reliable and the business impact is understood. This approach reduces false positives, avoids unnecessary disruption, and gives administrators time to learn from override justifications, alerts, and user feedback.</p>
-
-        <h2>Design the operating model before scaling</h2>
-
-        <p>Purview configuration is only one part of the deployment. Business teams should define what the information means, why it matters, and what outcomes they need. IT, security, and compliance teams should translate those requirements into labels, policies, monitoring, exceptions, and support paths.</p>
-
-        <p>User experience is a security dependency. Clear label names, meaningful descriptions, policy tips, and a simple feedback path can reduce confusion and improve compliance. A feedback loop is especially important for automatic labeling and DLP because users and support teams will see the edge cases first. Those signals should feed a tuning backlog instead of being treated as one-off support tickets.</p>
-
-        <p>Also think beyond the initial rollout. Label changes, relabeling, scope changes, and label retirement can all have operational impact. Protection should also align with collaboration and lifecycle needs: encourage governed SharePoint and OneDrive sharing where appropriate, plan for endpoint movement, and recognize that some content needs retention while other content should eventually be deleted.</p>
 
         <h2>Common scenarios and path forward</h2>
 
