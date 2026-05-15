@@ -47,6 +47,7 @@ a:hover {
 .wrap {
   max-width: 1040px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .eyebrow {
@@ -189,14 +190,97 @@ code {
 }
 
 @media (max-width: 720px) {
+  body {
+    line-height: 1.55;
+  }
+
+  .site-header {
+    padding: 2.75rem 1rem;
+  }
+
+  .main {
+    padding: 1rem 0.75rem 3rem;
+  }
+
+  .article {
+    border-radius: 18px;
+  }
+
+  .lead {
+    font-size: 1.08rem;
+  }
+
   .card {
     margin-top: -2rem;
     padding: 1.25rem;
   }
 
+  table {
+    display: block;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody,
+  tr,
   th,
   td {
     display: block;
     width: 100%;
+  }
+
+  tr {
+    margin: 0 0 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  td {
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 0.85rem 1rem;
+  }
+
+  td:last-child {
+    border-bottom: 0;
+  }
+
+  td::before {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--muted);
+    content: attr(data-label);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  td[data-label=""]::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 2.25rem 0.9rem;
+  }
+
+  .article {
+    padding: 1rem;
+  }
+
+  .callout {
+    padding: 1rem;
+  }
+
+  h2 {
+    margin-top: 2.1rem;
   }
 }
