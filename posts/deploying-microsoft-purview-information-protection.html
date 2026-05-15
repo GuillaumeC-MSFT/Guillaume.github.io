@@ -117,7 +117,9 @@
 
         <p>Auto-labeling can reduce user burden and improve consistency, but it should be introduced carefully. Start with scenarios that have high-confidence signals, such as well-defined sensitive information types, regulated identifiers, Exact Data Match scenarios, highly structured data patterns, or specific document types identified by trainable classifiers.</p>
 
-        <p>Before enforcing automatic labels broadly, review match accuracy and false positives. In many cases, it is safer to begin with recommendations or simulation before moving to automatic application.</p>
+        <p>Detection quality matters as much as coverage. Built-in sensitive information types are a strong starting point, but some business content is easier to identify with custom sensitive information types, Exact Data Match, document fingerprinting, or custom trainable classifiers. These options can improve detection accuracy because they reflect the organization's real data patterns, templates, and business language.</p>
+
+        <p>Before enforcing automatic labels broadly, review match accuracy and false positives. Tune thresholds, confidence levels, supporting evidence, and classifier choices until the signal is reliable. In many cases, it is safer to begin with recommendations or simulation before moving to automatic application.</p>
 
         <h2>5. Prevent data loss with phased DLP</h2>
 
@@ -151,19 +153,51 @@
 
         <p>Useful metrics include label adoption, percentage of labeled content, auto-labeling matches, DLP policy matches, DLP overrides and justifications, false positive rates, external sharing activity, endpoint exfiltration attempts, alert volume by severity, time to review alerts, and policy changes over time.</p>
 
-        <h2>Recommended implementation sequence</h2>
+        <h2>How the work fits together</h2>
 
-        <ol>
-          <li>Land the Secure by Default with Microsoft Purview blueprint.</li>
-          <li>Complete the documented Purview prerequisites using the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a>.</li>
-          <li>Plan the sensitivity label configuration using the sensitivity labels Excel workbook.</li>
-          <li>Know your data by confirming priority data types, workloads, owners, and movement paths.</li>
-          <li>Create and publish sensitivity labels as the classification foundation.</li>
-          <li>Validate the label experience with a representative pilot group.</li>
-          <li>Introduce DLP in audit or simulation first, using labels as conditions where appropriate.</li>
-          <li>Expand to endpoint, external sharing, and container governance scenarios based on validated risk.</li>
-          <li>Govern the program through alert review, exception handling, reporting, and continuous tuning.</li>
-        </ol>
+        <p>Instead of treating deployment as a long list of disconnected tasks, think of it as a set of connected phases. Each phase creates the conditions for the next one, which helps customers avoid configuring controls before they understand the data, the ownership model, or the user experience.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>What customers are trying to accomplish</th>
+              <th>Primary outputs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Establish the foundation</td>
+              <td>Use the Secure by Default blueprint, advanced deployment guides, and Zero Trust workshop to understand the recommended order of work and prepare the tenant.</td>
+              <td>Prerequisites, ownership, scope, licensing, and operating model decisions.</td>
+            </tr>
+            <tr>
+              <td>Plan the label model</td>
+              <td>Use the sensitivity labels Excel workbook to design a simple taxonomy and map labels to business scenarios.</td>
+              <td>Label names, descriptions, settings, publication scope, and priority workloads.</td>
+            </tr>
+            <tr>
+              <td>Know and classify the data</td>
+              <td>Identify the sensitive data, repositories, movement paths, and detection methods that matter most.</td>
+              <td>Priority data types, workload coverage, sensitive information types, EDM scenarios, document fingerprints, and custom trainable classifier candidates.</td>
+            </tr>
+            <tr>
+              <td>Protect and validate</td>
+              <td>Publish labels to a representative group, validate the user experience, and tune detection before broad enforcement.</td>
+              <td>Pilot feedback, label tuning, simulation results, false-positive reduction, and support guidance.</td>
+            </tr>
+            <tr>
+              <td>Prevent data loss</td>
+              <td>Introduce DLP gradually, using labels as conditions where appropriate and moving from visibility to enforcement as confidence improves.</td>
+              <td>Audit policies, user notifications, override workflows, and targeted enforcement for high-confidence scenarios.</td>
+            </tr>
+            <tr>
+              <td>Operate and improve</td>
+              <td>Review alerts, exceptions, adoption, and policy outcomes so the program improves over time.</td>
+              <td>Metrics, alert ownership, exception handling, tuning backlog, and governance rhythm.</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>Common mistakes to avoid</h2>
 
