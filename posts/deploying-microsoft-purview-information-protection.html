@@ -39,14 +39,14 @@
 
         <h2>Start with Secure by Default and deployment readiness</h2>
 
-        <p>Before configuring Microsoft Purview controls, start with the foundation. Use the <a href="https://learn.microsoft.com/en-us/purview/deploymentmodels/depmod-secure-by-default-intro">Secure by Default with Microsoft Purview blueprint</a>, review the Microsoft Purview deployment models and <a href="https://setup.microsoft.com/informationprotectionsetupguide">Microsoft 365 advanced deployment guides</a>, and use the sensitivity labels Excel workbook from the setup experience to confirm readiness. This blog does not replace those resources. It brings them together so customers can more easily navigate the end-to-end deployment path.</p>
+        <p>Before configuring Microsoft Purview controls, start with the foundation. Use the <a href="https://learn.microsoft.com/en-us/purview/deploymentmodels/depmod-secure-by-default-intro">Secure by Default with Microsoft Purview blueprint</a>, review the Microsoft Purview deployment models and <a href="https://setup.microsoft.com/informationprotectionsetupguide">Microsoft 365 advanced deployment guides</a>, and use the sensitivity labels Excel workbook from the setup experience to plan the label taxonomy and policy configuration. This blog does not replace those resources. It brings them together so customers can more easily navigate the end-to-end deployment path.</p>
 
         <p>The <a href="https://zerotrust.microsoft.com/">Microsoft Zero Trust workshop</a> can also help customers understand the broader order of activities across identity, devices, apps, infrastructure, network, and data before they go deeper on Purview-specific configuration.</p>
 
-        <p>The first milestone is not to create policies. It is to make sure the tenant, roles, licensing, scope, ownership, and operating model are ready. Complete the documented prerequisites from the Secure by Default blueprint, the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a>, and the sensitivity labels Excel workbook before customers begin configuring Purview capabilities.</p>
+        <p>The first milestone is not to create policies. It is to make sure the tenant, roles, licensing, scope, ownership, and operating model are ready. Complete the documented prerequisites from the Secure by Default blueprint and the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a>, then use the sensitivity labels Excel workbook to plan the label configuration before customers begin publishing labels and policies.</p>
 
         <div class="callout">
-          <strong>Recommended sequence:</strong> Secure by Default blueprint first, then the documented Purview prerequisites using the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a> and sensitivity labels Excel workbook, then the Purview data security lifecycle.
+          <strong>Recommended sequence:</strong> Secure by Default blueprint first, then the documented Purview prerequisites using the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a>, then sensitivity label planning with the Excel workbook, then the Purview data security lifecycle.
         </div>
 
         <h2>Follow the Purview data security lifecycle</h2>
@@ -57,7 +57,7 @@
 
         <p>Start by identifying the sensitive data, business scenarios, and locations that matter most. This includes understanding what information needs protection, where it is stored, who owns it, and how it moves across Microsoft 365, endpoints, and other approved repositories.</p>
 
-        <p>Use the sensitivity labels Excel workbook to capture scope, owners, priority workloads, sensitive information types, high-risk collaboration patterns, and readiness gaps. This helps customers focus on the data and scenarios that justify policy work instead of creating controls in isolation.</p>
+        <p>Use the sensitivity labels Excel workbook to plan the label taxonomy, label settings, policy configuration, owners, priority workloads, sensitive information types, and high-risk collaboration patterns. This helps customers focus on the data and scenarios that justify policy work instead of creating controls in isolation.</p>
 
         <p>Common areas to review include Exchange Online, SharePoint Online, OneDrive, Microsoft Teams, endpoint devices, on-premises file shares, SaaS applications, CRM or ERP systems, data warehouses, and third-party cloud storage. Also review common movement paths such as email attachments, Teams and SharePoint sharing, external guest collaboration, anonymous or organization-wide links, endpoint downloads, USB copies, printing, browser uploads, sync clients, and business system exports.</p>
 
@@ -155,7 +155,8 @@
 
         <ol>
           <li>Land the Secure by Default with Microsoft Purview blueprint.</li>
-          <li>Complete the documented Purview prerequisites using the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a> and sensitivity labels Excel workbook.</li>
+          <li>Complete the documented Purview prerequisites using the <a href="https://setup.microsoft.com/informationprotectionsetupguide">advanced deployment guides</a>.</li>
+          <li>Plan the sensitivity label configuration using the sensitivity labels Excel workbook.</li>
           <li>Know your data by confirming priority data types, workloads, owners, and movement paths.</li>
           <li>Create and publish sensitivity labels as the classification foundation.</li>
           <li>Validate the label experience with a representative pilot group.</li>
