@@ -37,37 +37,35 @@
           <strong>Core principle:</strong> Information protection is not about locking everything down. It is about applying the right protection to the right data at the right time.
         </div>
 
-        <h2>Align Information Protection to Zero Trust</h2>
+        <h2>Start with Secure by Default and deployment readiness</h2>
 
-        <p>Information Protection should not be treated as a standalone compliance task. It is a core part of a broader Zero Trust strategy for data. In a Zero Trust model, organizations verify explicitly, use least privilege access, and assume breach. For data, this means discovering sensitive information, classifying and labeling it, applying protection where needed, preventing risky data movement, monitoring insider and oversharing risks, and reducing unnecessary data exposure over time.</p>
+        <p>Before configuring Microsoft Purview controls, start with the foundation. Land Secure by Default recommendations, review the advanced deployment guidance, and use the companion workbook to confirm readiness. This keeps the deployment aligned to existing Microsoft guidance instead of turning the blog into a separate implementation methodology.</p>
 
-        <p>This also aligns with a secure-by-default mindset. Secure by default does not mean blocking everything on day one. It means starting with clear governance, sensible default labels and policies, least-privilege access, and progressive enforcement rather than waiting until sensitive data has already been overshared or exposed.</p>
+        <p>The first milestone is not to create policies. It is to make sure the tenant, roles, licensing, scope, ownership, and operating model are ready. Complete the documented prerequisites from the deployment guidance and workbook before customers begin configuring Purview capabilities.</p>
 
-        <h2>1. Start with business outcomes, not labels</h2>
+        <div class="callout">
+          <strong>Recommended sequence:</strong> Secure by Default first, then the documented Purview prerequisites, then the Purview data security lifecycle.
+        </div>
 
-        <p>A common mistake is to begin by asking, "What labels should we create?" A better first question is, "What business outcomes are we trying to achieve?"</p>
+        <h2>Follow the Purview data security lifecycle</h2>
 
-        <p>Examples may include preventing highly confidential documents from being shared externally, reducing accidental email oversharing, protecting customer personal information, encrypting board or executive materials, preventing sensitive files from being copied to USB devices, supporting audit requirements, preparing for Microsoft 365 Copilot, consolidating legacy tools, or improving visibility into where sensitive data lives.</p>
+        <p>Customers do not need another long checklist. A clearer approach is to follow the established Microsoft Purview flow: know your data, protect your data, prevent data loss, and govern your data. The guidance below keeps that sequence simple and explains where sensitivity labels and DLP fit.</p>
 
-        <p>The answers should guide the design. Labels, DLP policies, endpoint controls, and reports should all map back to business outcomes.</p>
+        <h2>1. Know your data</h2>
 
-        <h2>2. Identify the sensitive data that matters most</h2>
+        <p>Start by identifying the sensitive data, business scenarios, and locations that matter most. This includes understanding what information needs protection, where it is stored, who owns it, and how it moves across Microsoft 365, endpoints, and other approved repositories.</p>
 
-        <p>Before deploying labels broadly, identify the types of information your organization needs to protect. Common examples include personal information, financial information, health information, employee records, customer records, contracts, legal documents, intellectual property, source code, mergers and acquisitions content, executive materials, and regulated business records.</p>
+        <p>Use the workbook to capture scope, owners, priority workloads, sensitive information types, high-risk collaboration patterns, and readiness gaps. This helps customers focus on the data and scenarios that justify policy work instead of creating controls in isolation.</p>
 
-        <p>This step helps avoid overengineering. Not all data needs the same level of protection. The goal is to identify the data types and scenarios where protection delivers meaningful risk reduction.</p>
+        <p>Common areas to review include Exchange Online, SharePoint Online, OneDrive, Microsoft Teams, endpoint devices, on-premises file shares, SaaS applications, CRM or ERP systems, data warehouses, and third-party cloud storage. Also review common movement paths such as email attachments, Teams and SharePoint sharing, external guest collaboration, anonymous or organization-wide links, endpoint downloads, USB copies, printing, browser uploads, sync clients, and business system exports.</p>
 
-        <h2>3. Understand where sensitive data lives and how it moves</h2>
+        <h2>2. Protect your data with sensitivity labels</h2>
 
-        <p>Information protection is most effective when it reflects real user behavior. Map where sensitive information is stored across Exchange Online, SharePoint Online, OneDrive, Microsoft Teams, endpoint devices, on-premises file shares, SaaS applications, CRM or ERP systems, data warehouses, and third-party cloud storage.</p>
+        <p>Sensitivity labels should be established early because they provide the classification foundation for Microsoft Purview. Labels can classify data, apply visual markings, apply encryption or access restrictions, support user education, and create consistent signals for reporting and downstream policy decisions.</p>
 
-        <p>Then map how it moves: email attachments, Teams and SharePoint sharing, external guest collaboration, anonymous or organization-wide links, downloads to endpoints, USB copies, printing, browser uploads, sync clients, and exports from business systems.</p>
+        <p>Create and publish the label taxonomy before finalizing DLP policies. This allows labels to be used as policy conditions where appropriate and helps customers build controls around business meaning rather than only pattern matching.</p>
 
-        <p>This helps you decide which controls matter most. If sensitive files are frequently downloaded, endpoint DLP may be important. If external collaboration is common, label-based sharing controls and DLP policies may be a priority.</p>
-
-        <h2>4. Design a simple label taxonomy</h2>
-
-        <p>Sensitivity labels should be easy for users to understand. A practical starting point might look like this:</p>
+        <p>Keep the label taxonomy simple enough for users to understand. A practical starting point might look like this:</p>
 
         <table>
           <thead>
@@ -103,74 +101,68 @@
 
         <p>The exact taxonomy should reflect the organization's business, regulatory requirements, and risk tolerance. Simpler is usually better at the start. Too many labels can lead to user confusion, inconsistent labeling, and poor adoption.</p>
 
-        <h2>5. Separate classification from protection decisions</h2>
-
         <p>Not every label needs to apply encryption or strict controls. Some labels may exist primarily for classification and visibility. Others may apply protection such as encryption, access restrictions, watermarks, headers, footers, external sharing restrictions, or container-level controls for Teams, Microsoft 365 Groups, or SharePoint sites.</p>
 
         <p>This distinction matters. If every label introduces friction, users may resist adoption. A balanced approach allows organizations to classify broadly while applying strong protection only where risk justifies it.</p>
 
-        <h2>6. Pilot before broad deployment</h2>
+        <h2>3. Validate labels before broad deployment</h2>
 
         <p>Start with a controlled pilot. Choose a business unit or user group that handles meaningful sensitive data, represents real-world collaboration patterns, can provide feedback, has leadership support, and is not so broad that tuning becomes unmanageable.</p>
 
         <p>During the pilot, validate whether users understand the labels, whether label names and descriptions are clear, whether default labels make sense, whether mandatory labeling creates friction, whether automatic labeling recommendations are useful, whether DLP policies generate false positives, and whether support and exception processes are clear.</p>
 
-        <h2>7. Use auto-labeling carefully</h2>
+        <h2>4. Use auto-labeling carefully</h2>
 
         <p>Auto-labeling can reduce user burden and improve consistency, but it should be introduced carefully. Start with scenarios that have high-confidence signals, such as well-defined sensitive information types, regulated identifiers, Exact Data Match scenarios, highly structured data patterns, or specific document types identified by trainable classifiers.</p>
 
         <p>Before enforcing automatic labels broadly, review match accuracy and false positives. In many cases, it is safer to begin with recommendations or simulation before moving to automatic application.</p>
 
-        <h2>8. Introduce DLP in phases</h2>
+        <h2>5. Prevent data loss with phased DLP</h2>
 
-        <p>Data Loss Prevention is most successful when deployed gradually. A common maturity path is audit only, user notification, block with override, and then hard block for the highest-risk and highest-confidence scenarios.</p>
+        <p>Data Loss Prevention is most successful when deployed after the label foundation is available and then introduced gradually. Where it makes sense, use sensitivity labels as DLP conditions so policies can respond to classification, not just content patterns.</p>
+
+        <p>A common maturity path is audit only, user notification, block with override, and then hard block for the highest-risk and highest-confidence scenarios.</p>
 
         <p>This phased approach reduces business disruption and gives administrators time to tune policies. It also helps users understand expectations before controls become more restrictive.</p>
 
-        <h2>9. Extend protection to endpoints</h2>
+        <h2>6. Extend protection to endpoints</h2>
 
         <p>Sensitive data often moves from cloud services to endpoint devices. Endpoint DLP can help monitor or control activities such as copying files to USB, printing sensitive documents, copying data to the clipboard, uploading files through a browser, copying files to network shares, moving files to unmanaged cloud storage, and accessing sensitive content from unmanaged devices.</p>
 
         <p>This is especially important for organizations with remote work, BYOD, contractors, regulated data, or high-value intellectual property.</p>
 
-        <h2>10. Align external sharing controls with labels</h2>
+        <h2>7. Align external sharing controls with labels</h2>
 
         <p>External collaboration is often necessary, but it should be intentional and governed. Consider how labels should influence external sharing, guest access, anonymous links, SharePoint site sharing settings, Teams membership, Microsoft 365 Group privacy, email encryption, and forwarding restrictions.</p>
 
         <p>The goal is not to block all sharing. The goal is to make sharing appropriate to the sensitivity of the information.</p>
 
-        <h2>11. Prepare for Copilot and AI scenarios</h2>
+        <h2>8. Prepare for Copilot and AI scenarios</h2>
 
         <p>Microsoft 365 Copilot can increase the importance of strong data governance. Copilot respects existing permissions, but it can also make overshared or poorly governed content more visible. If sensitive files are broadly accessible, stale, unlabeled, or stored in unmanaged locations, organizations may face challenges during AI adoption.</p>
 
         <p>Before scaling Copilot, review overshared SharePoint sites, broad access groups, anonymous sharing links, stale or unmanaged content, sensitive files without labels, DLP coverage, retention and lifecycle policies, and audit and investigation readiness.</p>
 
-        <h2>12. Build an operating model</h2>
+        <h2>9. Govern and improve over time</h2>
 
         <p>Information protection is not a one-time deployment. It is an ongoing program. Define who owns labels, DLP policies, alert review, exceptions, false positive tuning, metrics, user education, and incident response.</p>
 
         <p>Useful metrics include label adoption, percentage of labeled content, auto-labeling matches, DLP policy matches, DLP overrides and justifications, false positive rates, external sharing activity, endpoint exfiltration attempts, alert volume by severity, time to review alerts, and policy changes over time.</p>
 
-        <h2>13. Recommended implementation sequence</h2>
+        <h2>Recommended implementation sequence</h2>
 
         <ol>
-          <li>Define business outcomes and priority risks.</li>
-          <li>Identify sensitive data types and high-risk workflows.</li>
-          <li>Map where sensitive data lives and how it moves.</li>
-          <li>Design a simple label taxonomy.</li>
-          <li>Configure labels, label policies, and basic user guidance.</li>
-          <li>Pilot with a representative group.</li>
-          <li>Tune labels, descriptions, and user experience.</li>
-          <li>Introduce auto-labeling recommendations or simulation.</li>
-          <li>Deploy DLP in audit mode.</li>
-          <li>Move selected DLP scenarios to notification or block with override.</li>
-          <li>Extend controls to endpoints.</li>
-          <li>Align labels with external sharing and container governance.</li>
-          <li>Build alert review, exception, and reporting processes.</li>
-          <li>Expand coverage and continuously optimize.</li>
+          <li>Land Secure by Default recommendations.</li>
+          <li>Complete the documented Purview prerequisites using the advanced deployment guidance and workbook.</li>
+          <li>Know your data by confirming priority data types, workloads, owners, and movement paths.</li>
+          <li>Create and publish sensitivity labels as the classification foundation.</li>
+          <li>Validate the label experience with a representative pilot group.</li>
+          <li>Introduce DLP in audit or simulation first, using labels as conditions where appropriate.</li>
+          <li>Expand to endpoint, external sharing, and container governance scenarios based on validated risk.</li>
+          <li>Govern the program through alert review, exception handling, reporting, and continuous tuning.</li>
         </ol>
 
-        <h2>14. Common mistakes to avoid</h2>
+        <h2>Common mistakes to avoid</h2>
 
         <ul>
           <li>Creating too many labels.</li>
