@@ -98,6 +98,41 @@
           </tbody>
         </table>
 
+        <p>Visibility should come before control. Use discovery, classification, DSPM insights, and stakeholder input to decide where protection will create the most value. Then start with Microsoft-provided classifiers, default capabilities, and documented guidance before creating custom detection logic. Custom sensitive information types, EDM, document fingerprinting, and trainable classifiers are most valuable after a real gap has been validated.</p>
+
+        <p>The operating model matters as much as the configuration. Business teams should define what the information means and why it matters. IT, security, and compliance teams should translate those requirements into labels, policies, monitoring, exceptions, and support paths.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Operating principle</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Design for user experience</td>
+              <td>If labels are confusing or controls create unnecessary friction, users may work around them. Clear names, descriptions, policy tips, recommendations, and a simple support path help protection become part of normal work.</td>
+            </tr>
+            <tr>
+              <td>Create a feedback loop</td>
+              <td>Users and support teams need a way to report unclear labels, incorrect detections, blocked workflows, and false positives. That feedback should feed the tuning backlog.</td>
+            </tr>
+            <tr>
+              <td>Support modern collaboration</td>
+              <td>Protection should follow the document where possible. Encourage governed SharePoint and OneDrive sharing instead of relying only on email attachments or after-the-fact blocking.</td>
+            </tr>
+            <tr>
+              <td>Plan the label lifecycle</td>
+              <td>Label changes, relabeling, policy scope changes, and label retirement can have operational impact. Track ownership and change management before scaling broadly.</td>
+            </tr>
+            <tr>
+              <td>Align with data lifecycle</td>
+              <td>Some content needs protection, some needs retention, and some should be deleted when no longer required. Information protection should align with retention and records requirements instead of treating all data as permanently valuable.</td>
+            </tr>
+          </tbody>
+        </table>
+
         <h2>2. Protect your data with sensitivity labels</h2>
 
         <p>Sensitivity labels should be established early because they provide the classification foundation for Microsoft Purview. They can classify data, apply visual markings, add encryption or access restrictions, support user education, and create consistent signals for reporting and downstream policy decisions.</p>
@@ -304,6 +339,10 @@
               <td><a href="https://learn.microsoft.com/en-us/purview/sensitivity-labels">Learn about sensitivity labels</a></td>
             </tr>
             <tr>
+              <td>Sensitivity labels in Office apps</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/sensitivity-labels-office-apps">Manage sensitivity labels in Office apps</a></td>
+            </tr>
+            <tr>
               <td>Encrypt content with sensitivity labels</td>
               <td><a href="https://learn.microsoft.com/en-us/purview/encryption-sensitivity-labels">Restrict access to content by using sensitivity labels to apply encryption</a></td>
             </tr>
@@ -318,6 +357,10 @@
             <tr>
               <td>Data classification</td>
               <td><a href="https://learn.microsoft.com/en-us/purview/data-classification-overview">Data classification in Microsoft Purview</a></td>
+            </tr>
+            <tr>
+              <td>Data Security Posture Management</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about">Learn about Data Security Posture Management</a></td>
             </tr>
             <tr>
               <td>Content explorer and activity explorer</td>
@@ -354,6 +397,10 @@
             <tr>
               <td>Inline web traffic and unmanaged cloud apps</td>
               <td><a href="https://learn.microsoft.com/en-us/purview/dlp-network-data-security-learn">Learn about Network Data Security</a> and <a href="https://learn.microsoft.com/en-us/purview/collection-policies-solution-overview">Collection Policies solution overview</a></td>
+            </tr>
+            <tr>
+              <td>Retention and data lifecycle</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/retention">Learn about retention policies and retention labels</a></td>
             </tr>
             <tr>
               <td>Zero Trust overview</td>
