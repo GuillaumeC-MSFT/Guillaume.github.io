@@ -60,7 +60,39 @@
 
         <p>Use the sensitivity labels Excel workbook to plan the taxonomy, settings, policy configuration, owners, priority workloads, sensitive information types, and high-risk collaboration patterns. This keeps the work anchored to real data and scenarios instead of creating controls in isolation.</p>
 
-        <p>Common areas to review include Exchange Online, SharePoint Online, OneDrive, Microsoft Teams, endpoint devices, on-premises file shares, SaaS applications, CRM or ERP systems, data warehouses, and third-party cloud storage. Also review common movement paths such as email attachments, Teams and SharePoint sharing, external guest collaboration, anonymous or organization-wide links, endpoint downloads, USB copies, printing, browser uploads, sync clients, and business system exports.</p>
+        <p>Instead of turning discovery into a long inventory of every possible workload, frame it around the decisions customers need to make. The practical questions are usually: what data needs protection, how does it move, which detection signals are reliable, and which controls should be applied first.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Customer question</th>
+              <th>Purview tools to bring into the discussion</th>
+              <th>Practical insight to validate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What sensitive data do we actually have?</td>
+              <td>Data classification, content explorer, activity explorer, built-in sensitive information types, custom sensitive information types, and trainable classifiers.</td>
+              <td>Start with business-owned data categories and real examples. Built-in classifiers are useful, but regulated identifiers, internal project names, contract templates, or industry-specific language often need custom detection.</td>
+            </tr>
+            <tr>
+              <td>Where does the data create risk?</td>
+              <td>DLP for enterprise applications and devices, Endpoint DLP, inline web traffic controls, audit, alerts, and activity explorer.</td>
+              <td>Look for movement patterns that change risk: external sharing, broad links, downloads to endpoints, USB copies, printing, browser uploads, unmanaged cloud storage, and unmanaged AI or SaaS use.</td>
+            </tr>
+            <tr>
+              <td>Which detections are accurate enough to automate?</td>
+              <td>Custom sensitive information types, Exact Data Match, document fingerprinting, custom trainable classifiers, auto-labeling simulation, and DLP policy simulation.</td>
+              <td>Accuracy improves when detection reflects the customer's data, templates, and business vocabulary. Use thresholds, confidence levels, supporting evidence, and test results to reduce false positives before enforcing controls.</td>
+            </tr>
+            <tr>
+              <td>Which controls should labels drive?</td>
+              <td>Sensitivity labels, label policies, automatic label recommendations, auto-labeling, encryption, content markings, container labels, and DLP policies that use labels as conditions.</td>
+              <td>Labels should create a consistent protection signal. Some labels may only classify content, while higher-risk labels can drive encryption, external sharing restrictions, endpoint controls, and DLP enforcement.</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>2. Protect your data with sensitivity labels</h2>
 
@@ -280,12 +312,40 @@
               <td><a href="https://learn.microsoft.com/en-us/purview/data-classification-overview">Data classification in Microsoft Purview</a></td>
             </tr>
             <tr>
+              <td>Content explorer and activity explorer</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/data-classification-content-explorer">Get started with content explorer</a> and <a href="https://learn.microsoft.com/en-us/purview/data-classification-activity-explorer">Get started with activity explorer</a></td>
+            </tr>
+            <tr>
               <td>Sensitive information types</td>
               <td><a href="https://learn.microsoft.com/en-us/purview/sit-sensitive-information-type-learn-about">Learn about sensitive information types</a></td>
             </tr>
             <tr>
+              <td>Custom sensitive information types</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/sit-create-a-custom-sensitive-information-type">Create a custom sensitive information type in the Microsoft Purview portal</a></td>
+            </tr>
+            <tr>
+              <td>Exact Data Match</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/sit-learn-about-exact-data-match-based-sits">Learn about exact data match based sensitive information types</a></td>
+            </tr>
+            <tr>
+              <td>Document fingerprinting</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/sit-document-fingerprinting">Document fingerprinting</a></td>
+            </tr>
+            <tr>
               <td>Trainable classifiers</td>
               <td><a href="https://learn.microsoft.com/en-us/purview/trainable-classifiers-learn-about">Learn about trainable classifiers</a></td>
+            </tr>
+            <tr>
+              <td>DLP planning and policy design</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp">Plan for data loss prevention</a> and <a href="https://learn.microsoft.com/en-us/purview/dlp-policy-design">Design a DLP policy</a></td>
+            </tr>
+            <tr>
+              <td>DLP alert investigation and tuning</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/dlp-alert-investigation-learn">Learn about investigating data loss prevention alerts</a></td>
+            </tr>
+            <tr>
+              <td>Inline web traffic and unmanaged cloud apps</td>
+              <td><a href="https://learn.microsoft.com/en-us/purview/dlp-network-data-security-learn">Learn about Network Data Security</a> and <a href="https://learn.microsoft.com/en-us/purview/collection-policies-solution-overview">Collection Policies solution overview</a></td>
             </tr>
             <tr>
               <td>Zero Trust overview</td>
