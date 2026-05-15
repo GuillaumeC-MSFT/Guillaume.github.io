@@ -34,6 +34,8 @@
 
         <p>Microsoft Purview Information Protection helps address this by enabling organizations to discover, classify, label, and protect sensitive information. Sensitivity labels can apply visual markings, encryption, access restrictions, and policy-based controls. Data Loss Prevention can help detect and prevent risky sharing or exfiltration. Endpoint DLP can extend protection to devices. Audit and reporting capabilities can support investigations, compliance, and continuous improvement.</p>
 
+        <p>The goal is not to enable every feature at once. A successful deployment connects the business outcome to the right Microsoft Purview capability, validates it with real data and users, and then expands controls as confidence improves.</p>
+
         <div class="callout">
           <strong>Core principle:</strong> Information protection is not about locking everything down. It is about applying the right protection to the right data at the right time.
         </div>
@@ -54,13 +56,15 @@
 
         <p>Customers do not need another long checklist. A clearer approach is to follow the established Microsoft Purview flow: know your data, protect it, prevent data loss, and govern over time. The sections below keep that sequence simple and explain where sensitivity labels and DLP fit.</p>
 
+        <p>Think of the deployment as a set of decisions, not a feature rollout. First define the risk scenario, then identify the data and users involved, then choose the right classification method, label behavior, DLP action, and operational owner.</p>
+
         <h2>1. Know your data</h2>
 
         <p>Start by identifying the sensitive data, business scenarios, and locations that matter most. This includes understanding what information needs protection, where it is stored, who owns it, and how it moves across Microsoft 365, endpoints, and other approved repositories.</p>
 
         <p>Use the sensitivity labels Excel workbook to plan the taxonomy, settings, policy configuration, owners, priority workloads, sensitive information types, and high-risk collaboration patterns. This keeps the work anchored to real data and scenarios instead of creating controls in isolation.</p>
 
-        <p>Instead of turning discovery into a long inventory of every possible workload, frame it around the decisions customers need to make. The practical questions are usually: what data needs protection, how does it move, which detection signals are reliable, and which controls should be applied first.</p>
+        <p>Instead of turning discovery into a long inventory of every possible workload, frame it around the decisions customers need to make. The practical questions are usually: what data needs protection, how does it move, which detection signals are reliable, which controls should be applied first, and who will own the outcome after deployment.</p>
 
         <table>
           <thead>
@@ -79,7 +83,7 @@
             <tr>
               <td>Where does the data create risk?</td>
               <td>DLP for enterprise applications and devices, Endpoint DLP, inline web traffic controls, audit, alerts, and activity explorer.</td>
-              <td>Look for movement patterns that change risk: external sharing, broad links, downloads to endpoints, USB copies, printing, browser uploads, unmanaged cloud storage, and unmanaged AI or SaaS use.</td>
+              <td>Look for movement patterns that change risk: external sharing, broad links, downloads to endpoints, USB copies, printing, browser uploads, unmanaged cloud storage, and unmanaged AI or SaaS use. This is where DLP becomes a safety net for the highest-risk paths, not the starting point for the whole program.</td>
             </tr>
             <tr>
               <td>Which detections are accurate enough to automate?</td>
@@ -89,7 +93,7 @@
             <tr>
               <td>Which controls should labels drive?</td>
               <td>Sensitivity labels, label policies, automatic label recommendations, auto-labeling, encryption, content markings, container labels, and DLP policies that use labels as conditions.</td>
-              <td>Labels should create a consistent protection signal. Some labels may only classify content, while higher-risk labels can drive encryption, external sharing restrictions, endpoint controls, and DLP enforcement.</td>
+              <td>Labels should become the control plane for protection decisions. Some labels may only classify content, while higher-risk labels can drive encryption, external sharing restrictions, endpoint controls, and DLP enforcement.</td>
             </tr>
           </tbody>
         </table>
@@ -99,6 +103,8 @@
         <p>Sensitivity labels should be established early because they provide the classification foundation for Microsoft Purview. They can classify data, apply visual markings, add encryption or access restrictions, support user education, and create consistent signals for reporting and downstream policy decisions.</p>
 
         <p>Create and publish the taxonomy before finalizing DLP policies. This allows sensitivity labels to be used as policy conditions where appropriate and helps customers build controls around business meaning rather than only pattern matching.</p>
+
+        <p>This is why labels should be treated as more than a user-facing classification menu. They are the durable signal that other controls can use for encryption, sharing restrictions, endpoint actions, reporting, and policy tuning.</p>
 
         <p>Keep the label taxonomy simple enough for users to understand. A practical starting point might look like this:</p>
 
@@ -158,6 +164,8 @@
 
         <p>Data Loss Prevention is most successful when introduced gradually after the classification foundation is available. Where it makes sense, use sensitivity labels as DLP conditions so policies can respond to classification, not just content patterns.</p>
 
+        <p>Position DLP as a layered safeguard, not as the first control customers experience. This helps teams avoid disruptive hard blocks before they understand normal collaboration patterns and detection quality.</p>
+
         <p>A common maturity path is audit only, user notification, block with override, and then hard block for the highest-risk and highest-confidence scenarios.</p>
 
         <p>This phased approach reduces business disruption and gives administrators time to tune policies. It also helps users understand expectations before controls become more restrictive.</p>
@@ -207,7 +215,7 @@
             <tr>
               <td>Plan the label model</td>
               <td>Use the sensitivity labels Excel workbook to design a simple taxonomy and map labels to business scenarios.</td>
-              <td>Label names, descriptions, settings, publication scope, and priority workloads.</td>
+              <td>Label names, descriptions, settings, publication scope, priority workloads, and business outcomes.</td>
             </tr>
             <tr>
               <td>Know and classify the data</td>
@@ -222,7 +230,7 @@
             <tr>
               <td>Prevent data loss</td>
               <td>Introduce DLP gradually, using labels as conditions where appropriate and moving from visibility to enforcement as confidence improves.</td>
-              <td>Audit policies, user notifications, override workflows, and targeted enforcement for high-confidence scenarios.</td>
+              <td>Audit policies, user notifications, override workflows, targeted enforcement for high-confidence scenarios, and clear exception handling.</td>
             </tr>
             <tr>
               <td>Operate and improve</td>
@@ -372,7 +380,7 @@
 
         <h2>Final recommendation</h2>
 
-        <p>Start simple, validate with real users, and mature over time. A successful information protection deployment usually follows this pattern: discover the data, define the labels, pilot the experience, introduce controls gradually, operationalize monitoring, and continuously tune based on business feedback.</p>
+        <p>Start simple, validate with real users, and mature over time. A successful information protection deployment usually follows this pattern: establish the secure baseline, confirm readiness, understand the data, define the labels, pilot the experience, introduce DLP gradually, operationalize monitoring, and continuously tune based on business feedback.</p>
 
         <p>Microsoft Purview provides the technical capabilities, but the success of the program depends on clear business outcomes, practical policy design, user adoption, and operational ownership.</p>
       </article>
